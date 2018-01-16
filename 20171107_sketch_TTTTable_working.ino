@@ -34,15 +34,15 @@ int RGB_9 = 0;
 
 //ir sensors 1-9 (irs_number), and their value saved in dis_number
 
-int irs_1 ; float dis_1 = analogRead(irs_1);
-int irs_2 ; float dis_2 = analogRead(irs_2);
-int irs_3 ; float dis_3 = analogRead(irs_3);
-int irs_4 ; float dis_4 = analogRead(irs_4);
-int irs_5 ; float dis_5 = analogRead(irs_5);
-int irs_6 ; float dis_6 = analogRead(irs_6);
-int irs_7 ; float dis_7 = analogRead(irs_7);
-int irs_8 ; float dis_8 = analogRead(irs_8);
-int irs_9 ; float dis_9 = analogRead(irs_9);
+int irs_1 ; float dis_1 = 1200;
+int irs_2 ; float dis_2 = 1200;
+int irs_3 ; float dis_3 = 1200;
+int irs_4 ; float dis_4 = 1200;
+int irs_5 ; float dis_5 = 1200;
+int irs_6 ; float dis_6 = 1200;
+int irs_7 ; float dis_7 = 1200;
+int irs_8 ; float dis_8 = 1200;
+int irs_9 ; float dis_9 = 1200;
 
 //variable to check whose turn it is, blue (1) beginns, then red (2)
 
@@ -104,15 +104,15 @@ void loop() {
 
   //check sensors, to turn light on and switch players turn
   
-  if((RGB_1 == 0) && (dis_1 < 1000)){RGB_1 = turn; if(turn == 1){turn=2;} else{turn=1;}}
-  if((RGB_2 == 0) && (dis_2 < 1000)){RGB_2 = turn; if(turn == 1){turn=2;} else{turn=1;}}
-  if((RGB_3 == 0) && (dis_3 < 1000)){RGB_3 = turn; if(turn == 1){turn=2;} else{turn=1;}}
-  if((RGB_4 == 0) && (dis_4 < 1000)){RGB_4 = turn; if(turn == 1){turn=2;} else{turn=1;}}
-  if((RGB_5 == 0) && (dis_5 < 1000)){RGB_5 = turn; if(turn == 1){turn=2;} else{turn=1;}}
-  if((RGB_6 == 0) && (dis_6 < 1000)){RGB_6 = turn; if(turn == 1){turn=2;} else{turn=1;}}
-  if((RGB_7 == 0) && (dis_7 < 1000)){RGB_7 = turn; if(turn == 1){turn=2;} else{turn=1;}}
-  if((RGB_8 == 0) && (dis_8 < 1000)){RGB_8 = turn; if(turn == 1){turn=2;} else{turn=1;}}
-  if((RGB_9 == 0) && (dis_9 < 1000)){RGB_9 = turn; if(turn == 1){turn=2;} else{turn=1;}}
+  if((RGB_1 == 0) && (analogRead(irs_1) < 1000)){RGB_1 = turn; if(turn == 1){turn=2;} else{turn=1;}}
+  if((RGB_2 == 0) && (analogRead(irs_2) < 1000)){RGB_2 = turn; if(turn == 1){turn=2;} else{turn=1;}}
+  if((RGB_3 == 0) && (analogRead(irs_3) < 1000)){RGB_3 = turn; if(turn == 1){turn=2;} else{turn=1;}}
+  if((RGB_4 == 0) && (analogRead(irs_4) < 1000)){RGB_4 = turn; if(turn == 1){turn=2;} else{turn=1;}}
+  if((RGB_5 == 0) && (analogRead(irs_5) < 1000)){RGB_5 = turn; if(turn == 1){turn=2;} else{turn=1;}}
+  if((RGB_6 == 0) && (analogRead(irs_6) < 1000)){RGB_6 = turn; if(turn == 1){turn=2;} else{turn=1;}}
+  if((RGB_7 == 0) && (analogRead(irs_7) < 1000)){RGB_7 = turn; if(turn == 1){turn=2;} else{turn=1;}}
+  if((RGB_8 == 0) && (analogRead(irs_8) < 1000)){RGB_8 = turn; if(turn == 1){turn=2;} else{turn=1;}}
+  if((RGB_9 == 0) && (analogRead(irs_9) < 1000)){RGB_9 = turn; if(turn == 1){turn=2;} else{turn=1;}}
 
   //check win for blue
   
