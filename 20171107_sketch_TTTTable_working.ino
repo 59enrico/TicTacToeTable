@@ -1,24 +1,13 @@
 //Connect to LED 1-9 (RGB_number_color) and their color (R)ED,(G)REEN,(B)LUE
 
-int RGB_1_r ;
-int RGB_2_r ;
-int RGB_3_r ;
-int RGB_4_r ;
-int RGB_5_r ;
-int RGB_6_r ;
-int RGB_7_r ;
-int RGB_8_r ;
-int RGB_9_r ;
+#include <Adafruit_NeoPixel.h>
+#ifdef __AVR__
+#include <avr/power.h>
+#endif
+#define PIN A1 // Hier wird angegeben, an welchem digitalen Pin die WS2812 LEDs bzw. NeoPixel angeschlossen sind
+#define NUMPIXELS 9 // Hier wird die Anzahl der angeschlossenen WS2812 LEDs bzw. NeoPixel angegeben
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
-int RGB_1_b ;
-int RGB_2_b ;
-int RGB_3_b ;
-int RGB_4_b ;
-int RGB_5_b ;
-int RGB_6_b ;
-int RGB_7_b ;
-int RGB_8_b ;
-int RGB_9_b ;
 
 //storage for LED 1-9 (RGB_x), whether off(0), blue(1) or red(2)
 
@@ -63,25 +52,7 @@ void setup() {
 
 // set LEDs as OUTPUT and Sensors as INPUT
 
-pinMode(RGB_1_r,OUTPUT);
-pinMode(RGB_2_r,OUTPUT);
-pinMode(RGB_3_r,OUTPUT);
-pinMode(RGB_4_r,OUTPUT);
-pinMode(RGB_5_r,OUTPUT);
-pinMode(RGB_6_r,OUTPUT);
-pinMode(RGB_7_r,OUTPUT);
-pinMode(RGB_8_r,OUTPUT);
-pinMode(RGB_9_r,OUTPUT);
-
-pinMode(RGB_1_b,OUTPUT);
-pinMode(RGB_2_b,OUTPUT);
-pinMode(RGB_3_b,OUTPUT);
-pinMode(RGB_4_b,OUTPUT);
-pinMode(RGB_5_b,OUTPUT);
-pinMode(RGB_6_b,OUTPUT);
-pinMode(RGB_7_b,OUTPUT);
-pinMode(RGB_8_b,OUTPUT);
-pinMode(RGB_9_b,OUTPUT);
+pixels.begin(); //Start NeoPixels
 
 pinMode(irs_1,INPUT);
 pinMode(irs_2,INPUT);
@@ -224,7 +195,7 @@ void loop() {
 
   //turning on the LEDs
   
-  if(RGB_1 == 1){digitalWrite(RGB_1_b,HIGH);}
+  if(RGB_1 == 1){pixels.setPixelColor(0, pixels.Color(0,0,255)); pixels.show();}
   if(RGB_2 == 1){digitalWrite(RGB_2_b,HIGH);}
   if(RGB_3 == 1){digitalWrite(RGB_3_b,HIGH);}
   if(RGB_4 == 1){digitalWrite(RGB_4_b,HIGH);}
