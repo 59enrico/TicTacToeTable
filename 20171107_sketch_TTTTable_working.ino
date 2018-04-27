@@ -132,63 +132,55 @@ void loop() {
   //action for win
   
   if(win == 1){
-    digitalWrite(RGB_1_r,LOW);
-    digitalWrite(RGB_2_r,LOW);
-    digitalWrite(RGB_3_r,LOW);
-    digitalWrite(RGB_4_r,LOW);
-    digitalWrite(RGB_5_r,LOW);
-    digitalWrite(RGB_6_r,LOW);
-    digitalWrite(RGB_7_r,LOW);
-    digitalWrite(RGB_8_r,LOW);
-    digitalWrite(RGB_9_r,LOW);
-                                    //setting LEDs to winners color for 5s/5000ms
-    digitalWrite(RGB_1_b,HIGH);
-    digitalWrite(RGB_2_b,HIGH);
-    digitalWrite(RGB_3_b,HIGH);
-    digitalWrite(RGB_4_b,HIGH);
-    digitalWrite(RGB_5_b,HIGH);
-    digitalWrite(RGB_6_b,HIGH);
-    digitalWrite(RGB_7_b,HIGH);
-    digitalWrite(RGB_8_b,HIGH);
-    digitalWrite(RGB_9_b,HIGH);
+    pixels.setPixelColor(0, pixels.Color(0,0,255)); pixels.show();
+    pixels.setPixelColor(1, pixels.Color(0,0,255)); pixels.show();
+    pixels.setPixelColor(2, pixels.Color(0,0,255)); pixels.show();
+    pixels.setPixelColor(3, pixels.Color(0,0,255)); pixels.show();
+    pixels.setPixelColor(4, pixels.Color(0,0,255)); pixels.show();
+    pixels.setPixelColor(5, pixels.Color(0,0,255)); pixels.show();
+    pixels.setPixelColor(6, pixels.Color(0,0,255)); pixels.show();
+    pixels.setPixelColor(7, pixels.Color(0,0,255)); pixels.show();
+    pixels.setPixelColor(8, pixels.Color(0,0,255)); pixels.show();
 
     delay(5000);
 
-    digitalWrite(RGB_1_b,LOW);
-    digitalWrite(RGB_2_b,LOW);
-    digitalWrite(RGB_3_b,LOW);
-    digitalWrite(RGB_4_b,LOW);
-    digitalWrite(RGB_5_b,LOW);
-    digitalWrite(RGB_6_b,LOW);
-    digitalWrite(RGB_7_b,LOW);
-    digitalWrite(RGB_8_b,LOW);
-    digitalWrite(RGB_9_b,LOW);
+    pixels.setPixelColor(0, pixels.Color(0,0,0)); pixels.show();
+    pixels.setPixelColor(1, pixels.Color(0,0,0)); pixels.show();
+    pixels.setPixelColor(2, pixels.Color(0,0,0)); pixels.show();
+    pixels.setPixelColor(3, pixels.Color(0,0,0)); pixels.show();
+    pixels.setPixelColor(4, pixels.Color(0,0,0)); pixels.show();
+    pixels.setPixelColor(5, pixels.Color(0,0,0)); pixels.show();
+    pixels.setPixelColor(6, pixels.Color(0,0,0)); pixels.show();
+    pixels.setPixelColor(7, pixels.Color(0,0,0)); pixels.show();
+    pixels.setPixelColor(8, pixels.Color(0,0,0)); pixels.show();
+
 
     reset = 1;
   }
 
   if(win == 2){
-    digitalWrite(RGB_1_b,LOW);
-    digitalWrite(RGB_2_b,LOW);
-    digitalWrite(RGB_3_b,LOW);
-    digitalWrite(RGB_4_b,LOW);
-    digitalWrite(RGB_5_b,LOW);
-    digitalWrite(RGB_6_b,LOW);
-    digitalWrite(RGB_7_b,LOW);
-    digitalWrite(RGB_8_b,LOW);
-    digitalWrite(RGB_9_b,LOW);
-                                    //setting LEDs to winners color for 5s/5000ms
-    digitalWrite(RGB_1_r,HIGH);
-    digitalWrite(RGB_2_r,HIGH);
-    digitalWrite(RGB_3_r,HIGH);
-    digitalWrite(RGB_4_r,HIGH);
-    digitalWrite(RGB_5_r,HIGH);
-    digitalWrite(RGB_6_r,HIGH);
-    digitalWrite(RGB_7_r,HIGH);
-    digitalWrite(RGB_8_r,HIGH);
-    digitalWrite(RGB_9_r,HIGH);
+    
+    pixels.setPixelColor(0, pixels.Color(255,0,0)); pixels.show();
+    pixels.setPixelColor(1, pixels.Color(255,0,0)); pixels.show();
+    pixels.setPixelColor(2, pixels.Color(255,0,0)); pixels.show();
+    pixels.setPixelColor(3, pixels.Color(255,0,0)); pixels.show();
+    pixels.setPixelColor(4, pixels.Color(255,0,0)); pixels.show();
+    pixels.setPixelColor(5, pixels.Color(255,0,0)); pixels.show();
+    pixels.setPixelColor(6, pixels.Color(255,0,0)); pixels.show();
+    pixels.setPixelColor(7, pixels.Color(255,0,0)); pixels.show();
+    pixels.setPixelColor(8, pixels.Color(255,0,0)); pixels.show();
 
     delay(5000);
+
+    pixels.setPixelColor(0, pixels.Color(0,0,0)); pixels.show();
+    pixels.setPixelColor(1, pixels.Color(0,0,0)); pixels.show();
+    pixels.setPixelColor(2, pixels.Color(0,0,0)); pixels.show();
+    pixels.setPixelColor(3, pixels.Color(0,0,0)); pixels.show();
+    pixels.setPixelColor(4, pixels.Color(0,0,0)); pixels.show();
+    pixels.setPixelColor(5, pixels.Color(0,0,0)); pixels.show();
+    pixels.setPixelColor(6, pixels.Color(0,0,0)); pixels.show();
+    pixels.setPixelColor(7, pixels.Color(0,0,0)); pixels.show();
+    pixels.setPixelColor(8, pixels.Color(0,0,0)); pixels.show();
 
     reset = 1;
   }
@@ -196,24 +188,24 @@ void loop() {
   //turning on the LEDs
   
   if(RGB_1 == 1){pixels.setPixelColor(0, pixels.Color(0,0,255)); pixels.show();}
-  if(RGB_2 == 1){digitalWrite(RGB_2_b,HIGH);}
-  if(RGB_3 == 1){digitalWrite(RGB_3_b,HIGH);}
-  if(RGB_4 == 1){digitalWrite(RGB_4_b,HIGH);}
-  if(RGB_5 == 1){digitalWrite(RGB_5_b,HIGH);}
-  if(RGB_6 == 1){digitalWrite(RGB_6_b,HIGH);}
-  if(RGB_7 == 1){digitalWrite(RGB_7_b,HIGH);}
-  if(RGB_8 == 1){digitalWrite(RGB_8_b,HIGH);}
-  if(RGB_9 == 1){digitalWrite(RGB_9_b,HIGH);}
+  if(RGB_2 == 1){pixels.setPixelColor(1, pixels.Color(0,0,255)); pixels.show();}
+  if(RGB_3 == 1){pixels.setPixelColor(2, pixels.Color(0,0,255)); pixels.show();}
+  if(RGB_4 == 1){pixels.setPixelColor(3, pixels.Color(0,0,255)); pixels.show();}
+  if(RGB_5 == 1){pixels.setPixelColor(4, pixels.Color(0,0,255)); pixels.show();}
+  if(RGB_6 == 1){pixels.setPixelColor(5, pixels.Color(0,0,255)); pixels.show();}
+  if(RGB_7 == 1){pixels.setPixelColor(6, pixels.Color(0,0,255)); pixels.show();}
+  if(RGB_8 == 1){pixels.setPixelColor(7, pixels.Color(0,0,255)); pixels.show();}
+  if(RGB_9 == 1){pixels.setPixelColor(8, pixels.Color(0,0,255)); pixels.show();}
 
-  if(RGB_1 == 2){digitalWrite(RGB_1_r,HIGH);}
-  if(RGB_2 == 2){digitalWrite(RGB_2_r,HIGH);}
-  if(RGB_3 == 2){digitalWrite(RGB_3_r,HIGH);}
-  if(RGB_4 == 2){digitalWrite(RGB_4_r,HIGH);}
-  if(RGB_5 == 2){digitalWrite(RGB_5_r,HIGH);}
-  if(RGB_6 == 2){digitalWrite(RGB_6_r,HIGH);}
-  if(RGB_7 == 2){digitalWrite(RGB_7_r,HIGH);}
-  if(RGB_8 == 2){digitalWrite(RGB_8_r,HIGH);}
-  if(RGB_9 == 2){digitalWrite(RGB_9_r,HIGH);}
+  if(RGB_1 == 2){pixels.setPixelColor(0, pixels.Color(255,0,0)); pixels.show();}
+  if(RGB_2 == 2){pixels.setPixelColor(1, pixels.Color(255,0,0)); pixels.show();}
+  if(RGB_3 == 2){pixels.setPixelColor(2, pixels.Color(255,0,0)); pixels.show();}
+  if(RGB_4 == 2){pixels.setPixelColor(3, pixels.Color(255,0,0)); pixels.show();}
+  if(RGB_5 == 2){pixels.setPixelColor(4, pixels.Color(255,0,0)); pixels.show();}
+  if(RGB_6 == 2){pixels.setPixelColor(5, pixels.Color(255,0,0)); pixels.show();}
+  if(RGB_7 == 2){pixels.setPixelColor(6, pixels.Color(255,0,0)); pixels.show();}
+  if(RGB_8 == 2){pixels.setPixelColor(7, pixels.Color(255,0,0)); pixels.show();}
+  if(RGB_9 == 2){pixels.setPixelColor(8, pixels.Color(255,0,0)); pixels.show();}
 
   //reset the game
   
