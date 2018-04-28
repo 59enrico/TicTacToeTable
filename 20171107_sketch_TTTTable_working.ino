@@ -68,7 +68,7 @@ Serial.begin(9600);
 }
 
 
-//_____________________________________________________________
+//___________________________________________________________________________
 
 
 void loop() {
@@ -105,7 +105,7 @@ void loop() {
        (RGB_3 == 1 && RGB_6 == 1 && RGB_9 == 1) ||             //3.column
        (RGB_1 == 1 && RGB_5 == 1 && RGB_9 == 1) ||             //diagonal upper left to lower right
        (RGB_3 == 1 && RGB_5 == 1 && RGB_7 == 1)){win = 1;}     //diagonal upper right to lower left
-**/
+*/
 
   //check win for red
   
@@ -127,7 +127,7 @@ void loop() {
        (RGB_3 == 2 && RGB_6 == 2 && RGB_9 == 2) ||             //3.column
        (RGB_1 == 2 && RGB_5 == 2 && RGB_9 == 2) ||             //diagonal upper left to lower right
        (RGB_3 == 2 && RGB_5 == 2 && RGB_7 == 2)){win = 2;}     //diagonal upper right to lower left
-**/
+*/
 
   //action for win
   
@@ -184,6 +184,22 @@ void loop() {
 
     reset = 1;
   }
+
+  //declaring a draw
+
+  if((RGB_1 == 1 || RGB_1 == 2) && (RGB_2 == 1 || RGB_2 == 2) && (RGB_3 == 1 || RGB_3 == 2) && (RGB_4 == 1 || RGB_4 == 2) && (RGB_5 == 1 || RGB_5 == 2) && (RGB_6 == 1 || RGB_6 == 2) && (RGB_7 == 1 || RGB_7 == 2) && (RGB_8 == 1 || RGB_8 == 2) && (RGB_9 == 1 || RGB_9 == 2)){
+
+    pixels.setPixelColor(0, pixels.Color(0,255,0)); pixels.show();
+    pixels.setPixelColor(1, pixels.Color(0,255,0)); pixels.show();
+    pixels.setPixelColor(2, pixels.Color(0,255,0)); pixels.show();
+    pixels.setPixelColor(3, pixels.Color(0,255,0)); pixels.show();
+    pixels.setPixelColor(4, pixels.Color(0,255,0)); pixels.show();
+    pixels.setPixelColor(5, pixels.Color(0,255,0)); pixels.show();
+    pixels.setPixelColor(6, pixels.Color(0,255,0)); pixels.show();
+    pixels.setPixelColor(7, pixels.Color(0,255,0)); pixels.show();
+    pixels.setPixelColor(8, pixels.Color(0,255,0)); pixels.show();
+    
+    }
 
   //turning on the LEDs
   
