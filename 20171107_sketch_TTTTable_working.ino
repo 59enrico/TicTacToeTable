@@ -1,4 +1,4 @@
-//Connect to LED 1-9 (RGB_number_color) and their color (R)ED,(G)REEN,(B)LUE
+//Connect to NeoPixels
 
 #include <Adafruit_NeoPixel.h>
 #ifdef __AVR__
