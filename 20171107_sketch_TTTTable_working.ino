@@ -4,34 +4,31 @@
 #ifdef __AVR__
 #include <avr/power.h>
 #endif
-#define PIN A1 // Hier wird angegeben, an welchem digitalen Pin die WS2812 LEDs bzw. NeoPixel angeschlossen sind
+#define PIN A0 // Hier wird angegeben, an welchem digitalen Pin die WS2812 LEDs bzw. NeoPixel angeschlossen sind
 #define NUMPIXELS 9 // Hier wird die Anzahl der angeschlossenen WS2812 LEDs bzw. NeoPixel angegeben
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
-
-//storage for LED 1-9 (RGB_x), whether off(0), blue(1) or red(2)
-
-int RGB_1 = 0;
-int RGB_2 = 0;
-int RGB_3 = 0;
-int RGB_4 = 0;
-int RGB_5 = 0;
-int RGB_6 = 0;
-int RGB_7 = 0;
-int RGB_8 = 0;
-int RGB_9 = 0;
+int RGB_1;
+int RGB_2;
+int RGB_3;
+int RGB_4;
+int RGB_5;
+int RGB_6;
+int RGB_7;
+int RGB_8;
+int RGB_9;
 
 //ir sensors 1-9 (irs_number), and their value saved in dis_number
 
-int irs_1 ; float dis_1 = 1200;
-int irs_2 ; float dis_2 = 1200;
-int irs_3 ; float dis_3 = 1200;
-int irs_4 ; float dis_4 = 1200;
-int irs_5 ; float dis_5 = 1200;
-int irs_6 ; float dis_6 = 1200;
-int irs_7 ; float dis_7 = 1200;
-int irs_8 ; float dis_8 = 1200;
-int irs_9 ; float dis_9 = 1200;
+int irs_1 = 2; float dis_1 = 1200;
+int irs_2 = 3; float dis_2 = 1200;
+int irs_3 = 4; float dis_3 = 1200;
+int irs_4 = 5; float dis_4 = 1200;
+int irs_5 = 6; float dis_5 = 1200;
+int irs_6 = 7; float dis_6 = 1200;
+int irs_7 = 8; float dis_7 = 1200;
+int irs_8 = 9; float dis_8 = 1200;
+int irs_9 = 10; float dis_9 = 1200;
 
 //variable to check whose turn it is, blue (1) beginns, then red (2)
 
@@ -50,9 +47,21 @@ int reset = 0;
 
 void setup() {
 
-// set LEDs as OUTPUT and Sensors as INPUT
+//storage for LED 1-9 (RGB_x), whether off(0), blue(1) or red(2)
+
+int RGB_1 = 0;
+int RGB_2 = 0;
+int RGB_3 = 0;
+int RGB_4 = 0;
+int RGB_5 = 0;
+int RGB_6 = 0;
+int RGB_7 = 0;
+int RGB_8 = 0;
+int RGB_9 = 0;
 
 pixels.begin(); //Start NeoPixels
+
+// set Sensors as INPUT
 
 pinMode(irs_1,INPUT);
 pinMode(irs_2,INPUT);
@@ -73,17 +82,26 @@ Serial.begin(9600);
 
 void loop() {
 
+while(1 == 1){
   //check sensors, to turn light on and switch players turn
   
-  if((RGB_1 == 0) && (analogRead(irs_1) < 1000)){RGB_1 = turn; if(turn == 1){turn=2;} else{turn=1;}}
-  if((RGB_2 == 0) && (analogRead(irs_2) < 1000)){RGB_2 = turn; if(turn == 1){turn=2;} else{turn=1;}}
-  if((RGB_3 == 0) && (analogRead(irs_3) < 1000)){RGB_3 = turn; if(turn == 1){turn=2;} else{turn=1;}}
-  if((RGB_4 == 0) && (analogRead(irs_4) < 1000)){RGB_4 = turn; if(turn == 1){turn=2;} else{turn=1;}}
-  if((RGB_5 == 0) && (analogRead(irs_5) < 1000)){RGB_5 = turn; if(turn == 1){turn=2;} else{turn=1;}}
-  if((RGB_6 == 0) && (analogRead(irs_6) < 1000)){RGB_6 = turn; if(turn == 1){turn=2;} else{turn=1;}}
-  if((RGB_7 == 0) && (analogRead(irs_7) < 1000)){RGB_7 = turn; if(turn == 1){turn=2;} else{turn=1;}}
-  if((RGB_8 == 0) && (analogRead(irs_8) < 1000)){RGB_8 = turn; if(turn == 1){turn=2;} else{turn=1;}}
-  if((RGB_9 == 0) && (analogRead(irs_9) < 1000)){RGB_9 = turn; if(turn == 1){turn=2;} else{turn=1;}}
+  if((RGB_1 == 0) && (analogRead(dis_1) < 500)){RGB_1 = turn; if(turn == 1){turn=2;} else{turn=1;}}
+  //delay (10);
+  if((RGB_2 == 0) && (analogRead(dis_2) < 500)){RGB_2 = turn; if(turn == 1){turn=2;} else{turn=1;}}
+  //delay (10);
+  if((RGB_3 == 0) && (analogRead(dis_3) < 500)){RGB_3 = turn; if(turn == 1){turn=2;} else{turn=1;}}
+  //delay (10);
+  if((RGB_4 == 0) && (analogRead(dis_4) < 500)){RGB_4 = turn; if(turn == 1){turn=2;} else{turn=1;}}
+  //delay (10);
+  if((RGB_5 == 0) && (analogRead(irs_5) < 500)){RGB_5 = turn; if(turn == 1){turn=2;} else{turn=1;}}
+  //delay (10);
+  if((RGB_6 == 0) && (analogRead(irs_6) < 500)){RGB_6 = turn; if(turn == 1){turn=2;} else{turn=1;}}
+  //delay (10);
+  if((RGB_7 == 0) && (analogRead(irs_7) < 100)){RGB_7 = turn; if(turn == 1){turn=2;} else{turn=1;}}
+  //delay (10);
+  if((RGB_8 == 0) && (analogRead(irs_8) < 500)){RGB_8 = turn; if(turn == 1){turn=2;} else{turn=1;}}
+  //delay (10);
+  if((RGB_9 == 0) && (analogRead(irs_9) < 500)){RGB_9 = turn; if(turn == 1){turn=2;} else{turn=1;}}
 
   //check win for blue
   
@@ -187,7 +205,7 @@ void loop() {
 
   //declaring a draw
 
-  if((RGB_1 == 1 || RGB_1 == 2) && (RGB_2 == 1 || RGB_2 == 2) && (RGB_3 == 1 || RGB_3 == 2) && (RGB_4 == 1 || RGB_4 == 2) && (RGB_5 == 1 || RGB_5 == 2) && (RGB_6 == 1 || RGB_6 == 2) && (RGB_7 == 1 || RGB_7 == 2) && (RGB_8 == 1 || RGB_8 == 2) && (RGB_9 == 1 || RGB_9 == 2)){
+/*  if((RGB_1 == 1 || RGB_1 == 2) && (RGB_2 == 1 || RGB_2 == 2) && (RGB_3 == 1 || RGB_3 == 2) && (RGB_4 == 1 || RGB_4 == 2) && (RGB_5 == 1 || RGB_5 == 2) && (RGB_6 == 1 || RGB_6 == 2) && (RGB_7 == 1 || RGB_7 == 2) && (RGB_8 == 1 || RGB_8 == 2) && (RGB_9 == 1 || RGB_9 == 2)){
 
     pixels.setPixelColor(0, pixels.Color(0,255,0)); pixels.show();
     pixels.setPixelColor(1, pixels.Color(0,255,0)); pixels.show();
@@ -200,7 +218,7 @@ void loop() {
     pixels.setPixelColor(8, pixels.Color(0,255,0)); pixels.show();
     
     }
-
+*/
   //turning on the LEDs
   
   if(RGB_1 == 1){pixels.setPixelColor(0, pixels.Color(0,0,255)); pixels.show();}
@@ -241,4 +259,5 @@ void loop() {
     win = 0;
 
     reset = 0;}
+}
 }
