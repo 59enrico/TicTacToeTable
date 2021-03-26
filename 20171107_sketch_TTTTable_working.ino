@@ -4,7 +4,7 @@
 #ifdef __AVR__
 #include <avr/power.h>
 #endif
-#define PIN A0 // Hier wird angegeben, an welchem digitalen Pin die WS2812 LEDs bzw. NeoPixel angeschlossen sind
+#define PIN A0 // Hier wird angegeben, an welchem analogen Pin die WS2812 LEDs bzw. die Adafruit NeoPixel angeschlossen sind
 #define NUMPIXELS 9 // Hier wird die Anzahl der angeschlossenen WS2812 LEDs bzw. NeoPixel angegeben
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
